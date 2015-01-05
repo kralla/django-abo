@@ -1,5 +1,5 @@
 import logging
-import pymill
+from pymill import pymill
 from datetime import datetime
 
 from django import forms
@@ -27,7 +27,7 @@ class PaymillForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         self.Pymill = pymill.Pymill
-        return super(PaymillForm, self).__init__(*args, **kwargs)
+        super(PaymillForm, self).__init__(*args, **kwargs)
 
     def set_pymill(self, pymill_class):
         '''IoC for testings'''
